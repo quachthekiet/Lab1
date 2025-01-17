@@ -12,6 +12,7 @@ namespace ClientApp
             {
                 TcpClient client = new TcpClient(server, port);
                 Console.Title = "Client Application";
+                Console.WriteLine($"Connected to server: {client.Client.RemoteEndPoint.ToString()}");
                 NetworkStream stream = client.GetStream();
                 while(true)
                 {

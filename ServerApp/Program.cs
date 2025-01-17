@@ -25,7 +25,9 @@ namespace ServerApp
                 {
                     // Translate data bytes to a ASCII string.
                     data = System.Text.Encoding.ASCII.GetString(bytes, 0, count);
-                    Console.WriteLine($"Received: {data} at {DateTime.Now:t}");
+                    string clientInfo = client.Client.RemoteEndPoint.ToString();
+
+                    Console.WriteLine($"{clientInfo}, Received: {data} at {DateTime.Now:t}");
 
                     // Process the data sent by the client.
                     data = data.ToUpper();
